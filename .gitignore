@@ -1,0 +1,26 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+
+# NuGet
+*.nupkg
+packages/
+
+# MAUI specific
+*.apk
+*.aab
+*.ipa
+*.app
+
+# OS files
+.DS_Store
+Thumbs.db

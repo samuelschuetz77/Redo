@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedoRepository_Sam_Paula.Views.HomePage"
+             Title="Mortgage Calculator">
+    <VerticalStackLayout Spacing="12" Padding="16">
+        <Label Text="Saved Scenarios" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Button Text="Calculate New Scenario" Command="{Binding NewScenarioCommand}" BackgroundColor="#512BD4" TextColor="White" />
+
+        <CollectionView ItemsSource="{Binding Scenarios}" EmptyView="No scenarios saved yet.">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="10" BorderColor="#CCCCCC">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto">
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding LoanAmount, StringFormat='Loan: {0:C0}'}" FontAttributes="Bold" />
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding TermYears, StringFormat='Term: {0} years'}" />
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding MonthlyPayment, StringFormat='Monthly: {0:C2}'}" TextColor="#512BD4" FontAttributes="Bold" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding InterestRate, StringFormat='Rate: {0}%'}" />
+                            <Label Grid.Row="2" Grid.Column="0" Text="{Binding TotalInterestPaid, StringFormat='Total Interest: {0:C2}'}" />
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding TotalPaid, StringFormat='Total Paid: {0:C2}'}" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Clear All" Command="{Binding ClearCommand}" BackgroundColor="#FF6B6B" TextColor="White" HorizontalOptions="End" />
+    </VerticalStackLayout>
+</ContentPage>
