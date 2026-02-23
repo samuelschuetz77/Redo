@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env:
   # Update this path to match your .csproj file
-  PROJECT_PATH: YourMauiApp/YourMauiApp.csproj
+  PROJECT_PATH: RedoRepository_Sam_Paula/RedoRepository_Sam_Paula.csproj
 jobs:
   build-android:
     name: Build Android (Release)
